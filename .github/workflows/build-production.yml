@@ -57,4 +57,4 @@ jobs:
       
       - name: Run Helm Deploy
         run:
-          helm upgrade --install --create-namespace --atomic --wait --namespace staging contoso-website ./kubernetes/contoso-website --set image.repository=${{ secrets.ACR_NAME }} --set dns.name=${{ secrets.DNS_NAME }} --set image.tag=${GITHUB_REF##*/}
+          helm upgrade --install --create-namespace --atomic --wait --namespace production contoso-website ./kubernetes/contoso-website --set image.repository=${{ secrets.ACR_NAME }} --set dns.name=${{ secrets.DNS_NAME }} --set image.tag=${GITHUB_REF##*/}
